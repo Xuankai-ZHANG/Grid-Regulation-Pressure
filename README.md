@@ -20,14 +20,14 @@ This project analyzes grid regulation pressure using quantile regression to esti
 4. Place the dataset file `grid_data.xlsx` in the `data/` directory
 
 ## Dependencies
-The project requires the following Python packages:
-- numpy
-- pandas
-- statsmodels
-- scikit-learn
-- matplotlib (for visualization)
-- geopandas (for mapping)
-- seaborn (for visualization)
+The project requires the following Python packages with recommended versions:
+- numpy==2.2.6
+- pandas==2.3.3
+- statsmodels==0.14.5
+- scikit-learn==1.7.2
+- matplotlib==3.10.8 (for visualization)
+- geopandas==0.15.0 (for mapping)
+- seaborn==0.13.2 (for visualization)
 
 You can install these dependencies using pip:
 ```bash
@@ -48,6 +48,8 @@ This will:
   - `qr_weights_results.pkl`
   - `qr_regression_report.txt`
 
+**Running time**: Approximately a few seconds for the regression model.
+
 ### 2. Generate Visualizations
 ```bash
 python plot_partA.py  # Generates Figure A1-A2
@@ -55,6 +57,8 @@ python plot_partB.py  # Generates Figure B1-B5
 python plot_maps.py   # Generates maps
 ```
 These scripts will generate various figures and maps in the `output_plot/` directory.
+
+**Running time**: Plotting scripts run in seconds, while map generation may take around 1 minute.
 
 ## Data Availability
 The datasets used in this study include Tokyo metropolitan grid-level electricity load data with 30-minute resolution, population mobility data based on mobile GPS, urban spatial structure data, and socioeconomic statistics. Electricity load and population mobility data are provided in anonymized, aggregated form and are subject to data sharing and privacy regulations.
@@ -74,8 +78,10 @@ Grid Regulation Pressure/
 ├── utils/
 │   └── map_utils.py            # Utility functions for mapping
 ├── quantile_regression.py      # Main regression model
-├── plot_figure1.py             # Figure 1 generation
-├── plot_figure3.py             # Figure 3 generation
+├── plot_partA.py               # Figure A1-A2 generation
+├── plot_partB.py               # Figure B1-B5 generation
 ├── plot_maps.py                # Map generation
-└── README.md                   # This file
+├── README.md                   # This file
+└── LICENSE                     # License file
 ```
+
